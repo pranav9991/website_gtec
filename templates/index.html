@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Design Cost Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Website Design Cost Calculator</h1>
+        <form action="/predict" method="POST">
+            <div class="form-section">
+                <h2>Basic Information</h2>
+                <label for="new_or_redesign">Is this a new website or redesign?</label>
+                <select name="new_or_redesign" id="new_or_redesign">
+                    <option value="New">New</option>
+                    <option value="Redesign">Redesign</option>
+                </select>
+                
+                <label for="num_pages">Number of Pages:</label>
+                <input type="number" name="num_pages" id="num_pages" min="1" max="100">
+            </div>
+
+            <div class="form-section">
+                <h2>UI/UX Design</h2>
+                <label for="ui_ux_design">Select UI/UX Design Type:</label>
+                <select name="ui_ux_design" id="ui_ux_design">
+                    <option value="Standard">Standard</option>
+                    <option value="Advanced">Advanced</option>
+                    <option value="Custom">Custom</option>
+                </select>
+            </div>
+
+            <div class="form-section">
+                <h2>E-commerce Functionality</h2>
+                <label for="ecommerce_functionality">E-commerce Functionality Required?</label>
+                <input type="radio" name="ecommerce_functionality" value="Yes"> Yes
+                <input type="radio" name="ecommerce_functionality" value="No"> No
+            </div>
+
+            <div class="form-section">
+                <h2>Basic Features</h2>
+                <input type="checkbox" name="basic_features" value="Image Gallery"> Image Gallery
+                <input type="checkbox" name="basic_features" value="Video Gallery"> Video Gallery
+                <input type="checkbox" name="basic_features" value="Live Chat"> Live Chat
+                <input type="checkbox" name="basic_features" value="WhatsApp Integration"> WhatsApp Integration
+                <input type="checkbox" name="basic_features" value="Analytics"> Analytics
+            </div>
+
+            <div class="form-section">
+                <h2>Advanced Features</h2>
+                <input type="checkbox" name="advanced_features" value="Payment Gateways"> Payment Gateways
+                <input type="checkbox" name="advanced_features" value="Chatbot"> Chatbot
+                <input type="checkbox" name="advanced_features" value="Login Systems"> Login Systems
+                <input type="checkbox" name="advanced_features" value="Appointment Scheduling"> Appointment Scheduling
+            </div>
+
+            <div class="form-section">
+                <h2>Additional Services</h2>
+                <input type="checkbox" name="content_writing"> Content Writing Services
+                <input type="checkbox" name="stock_images"> Stock Images
+                <input type="checkbox" name="seo_design"> SEO Design
+            </div>
+
+            <button type="submit">Calculate Estimated Cost</button>
+        </form>
+    </div>
+</body>
+</html>
